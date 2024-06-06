@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.navbar .material-icons {
+    font-size: 24px;
+}
+
+.navbar-brand img {
+    font-weight: bold;
+    width: 150px;
+}
+
+#content {
+    margin-top: 30px;
+    display: flex;
+}
+
+#map-container {
+    transition: width 1s ease;
+    position: relative;
+}
+
+#map {
+    border-radius: 15px;
+    height: 80vh;
+    width: 100%;
+    background-color: #e9ecef;
+}
+
+#general-card, #active-card, #details-card, #trip-history-card {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#general-card {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+#general-card .card-title {
+    color: rgb(80, 80, 80);
+    border-bottom: 2px solid lightgrey;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#general-card .icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#general-card .icon {
+    font-size: 24px; /* Adjust icon size as needed */
+    margin-right: 10px;
+    vertical-align: middle; /* Ensure vertical alignment */
+}
+
+#general-card .value {
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+}
+
+#active-card {
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    max-width: 460px;
+    margin-left: 20px;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.card-title {
+    font-weight: bolder;
+}
+
+#active-card input {
+    border-radius: 5px;
+    width: 95%;
+}
+
+#machine-data {
+    display: flex;
+}
+
+#machine-data .card-title {
+    border-bottom: 0.5px solid lightgrey;
+}
+
+#machine-data .card {
+    padding: 0px;
+}
+
+#machine-data .data-title {
+    color: lightgray;
+    width: fit-content;
+}
+
+#machine-data .data {
+    font-size: 13px;
+}
+
+#details-card {
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+}
+
+#status {
+    border: 2px solid darkred;
+    border-radius: 10px;
+    color: darkred;
+    padding: 2px;
+    width: fit-content;
+    text-align: center;
+}
+
+#trip-history-card {
+    bottom: 20px;
+    width: 300px;
+    position: absolute; 
+    left: 340px;
+}
+
+#trip-history-card table {
+    width: 90%;
+    padding: 20px;
+    margin: 10px;
+}
+
+#trip-history-titles {
+    width: 300px;
+    text-align: left;
+}
+
+.trip-history-data {
+    background-color: #f9f9f9;;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: right;
+}
+
+.machine-list {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+:is(.machine-item, .active-machine-item) {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    height: 96px;
+    width: 95%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+.machine-item:hover {
+    background-color: #f8f9fa;
+}
+
+.active-machine-item {
+    border: 2px solid darkred;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
+}
+
+.machine-item .material-icons {
+    font-size: 50px;
+    margin-right: 2px;
+}
+
+.machine-details .material-icons {
+    font-size: 15px;
+    margin-right: 0px;
+}
+
+.machine-details{
+    align-items: center;
+}
+
+.machine-number {
+    color: rgb(80, 80, 80);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.machine-details .icon-text {
+    font-size: 13px;
+}
+
+.machine-location {
+    color: gray;
+    font-size: 15px;
+}
+
+.machine-rate {
+    text-align: right;
+    font-size: 18px;
+}
+
+.yield {
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.mileage {
+    font-weight: lighter;
+    color: gray;
+}
+
+.d-none {
+    display: none;
+}
+
+.nav .nav-item .nav-link {
+    padding: 5px 15px;
+    color: black;
+}
+
+.nav .nav-item .nav-link.active {
+    font-weight: bolder;
+    border-bottom: 3px solid darkred;
+}
+
+.nav .nav-item .nav-link:hover {
+    color: darkred;
+}

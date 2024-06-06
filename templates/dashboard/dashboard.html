@@ -1,0 +1,177 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TryKey Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon_io//favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon_io//favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/favicon_io/site.webmanifest' %}">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="{% static 'img/trykey-logo.png' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="material-icons">notifications_none</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="material-icons">person_outline</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row mt-2">
+            <div class="col-12">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="all">ALL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="active">ACTIVE</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content" class="position-relative">
+            <div id="map-container" class="position-relative">
+                <center><div id="map"></div></center>
+                <div id="general-card" class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">General</h5>
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="icon-text">
+                                    <span class="material-icons icon">build</span>
+                                    <div>Total No. of Machines</div>
+                                </div>
+                                <div class="value" id="machine-total">24</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="icon-text">
+                                    <span class="material-icons icon" style="color: darkred;">check_circle</span>
+                                    <div>No. of Active Machines</div>
+                                </div>
+                                <div class="value" id="active-machine-total">10</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="icon-text">
+                                    <span class="material-icons icon" style="color: darkgreen;">attach_money</span>
+                                    <div>Total Expected Yield</div>
+                                </div>
+                                <div class="value" id="yield-total">₦45,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="machine-data">
+                    <div id="details-card" class="card d-none">
+                        <div class="card-body">
+                            <h6 class="card-title pb-3">VEHICLE DETAILS</h6>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="data data-title">Vehicle Number:</div>
+                                    <div class="data" id="vehicle-number"></div>
+                                    <br>
+                                    <div class="data data-title">Driver's name:</div>
+                                    <div class="data" id="driver-name"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="data data-title">Status:</div>
+                                    <div class="data px-2" id="status"></div>
+                                    <br>
+                                    <div class="data data-title">Passengers:</div>
+                                    <div class="data" id="passengers"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="trip-history-card" class="card d-none">
+                        <div class="card-body">
+                            <h6 class="card-title pb-3">TRIP HISTORY</h6>
+                            <table>
+                                <tbody>
+                                    <tr class="mb-3 row">
+                                        <td class="data data-title" id="trip-history-titles">Total no. of passengers:</td>
+                                        <td class="trip-history-data data px-2" id="total-passengers"></td>
+                                    </tr>
+                                    <tr class="my-3 row">
+                                        <td class="data data-title" id="trip-history-titles">Total distance travelled:</td>
+                                        <td class="trip-history-data data px-2" id="distance-travelled"></td>
+                                    </tr>
+                                    <tr class="my-3 row">
+                                        <td class="data data-title" id="trip-history-titles">Expected yield:</td>
+                                        <td class="trip-history-data data px-2" id="expected-yield"></td>
+                                    </tr>
+                                    <tr class="mt-3 row">
+                                        <td class="data data-title" id="trip-history-titles">Current location:</td>
+                                        <td class="trip-history-data data px-2" id="current-location"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="active-card" class="card d-none">
+                <div class="card-body p-3">
+                    <h4 class="card-title mb-4">Active Machines</h4>
+                    <input type="text" class="form-control pl-3 py-4 m-2 mb-4" id="search" placeholder="Search location or machine number">
+                    <div class="machine-list">
+                        <!-- SAMPLE MACHINE-ITEM CHILD OCMPONENT, now generated dynamically via fetch.js
+                        <div class="machine-item pl-3 py-4 m-2 mb-3" onclick="showDetails(this)">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="material-icons">electric_rickshaw</td>
+                                        <td class="machine-details mx-3">
+                                            <h6 class="machine-number">RJ14CV0002</h6>
+                                            <div class="icon-text">
+                                                <span class="material-icons" style="color: darkred;">location_on</span>
+                                                <span class="machine-location">Wuse II, Abuja.</span>
+                                            </div>
+                                        </td>
+                                        <td class="machine-rate pr-2"><span class="yield">N900</span><span class="mileage">/30km</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Make sure fetch.js is loaded before scripts.js because scripts.js depends on the functions defined in fetch.js. -->
+    <script src="{% static 'js/fetch.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script><script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <script src="{% static 'js/geolocation.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA1mnR616caBJuv-q1c8iWBx42HNVZDYKU&callback=initialize"></script>
+</body>
+
+</html>

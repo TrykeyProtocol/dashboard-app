@@ -54,10 +54,10 @@ var initialize = function() {
 
     // Array of arbitrary marker data
     const markers = [
-        { position: { lat: 9.047340774368058, lng: 7.446985812379514 }, icon: "../static/img/rickshaw(inactive).png" },
-        { position: { lat: 9.046270641849858, lng: 7.443091245114522 }, icon: "../static/img/rickshaw(active).png" },
-        { position: { lat: 9.045550154797594, lng: 7.44993624212572 }, icon: "../static/img/rickshaw(active).png" },
-        { position: { lat: 9.0410152914226, lng: 7.45123443121405 }, icon: "../static/img/rickshaw(inactive).png" },
+        { position: { lat: 9.08924062440234, lng: 7.48158562094852 }, icon: "../static/img/rickshaw(inactive).png" },
+        { position: { lat: 9.044361454437045, lng: 7.518944609569588 }, icon: "../static/img/rickshaw(inactive).png" },
+        { position: { lat: 9.073267325702234, lng: 7.481970765161108 }, icon: "../static/img/rickshaw(active).png" },
+        { position: { lat: 9.104452627537638, lng: 7.40378649000568 }, icon: "../static/img/rickshaw(active).png" },
     ];
 
     // Loop through the marker data and create markers

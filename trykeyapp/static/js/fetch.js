@@ -2,11 +2,11 @@
 
 // Predefined arrays for mock data
 const machineNumbers = ['RJ14CV0002', 'RJ14CV0003', 'RJ14CV0004', 'RJ14CV0005', 'RJ14CV0006', 'RJ14CV0007', 'RJ14CV0008', 'RJ14CV0009', 'RJ14CV0010', 'RJ14CV0011'];
-const totalPassengers = [21, 18, 25, 22, 19, 23, 20, 24, 26, 17];
-const distancesTravelled = ['108', '95', '120', '100', '105', '110', '90', '115', '130', '85'];
-const expectedYields = ['20000', '18000', '22000', '19000', '21000', '23000', '17000', '24000', '25000', '16000'];
-const currentLocations = ['Wuse, Abuja', 'Garki, Abuja', 'Maitama, Abuja', 'Wuse, Abuja', 'Garki, Abuja', 'Maitama, Abuja', 'Gwarinpa, Abuja', 'Gwarimpa, Abuja', 'Asokoro, Abuja', 'Wuse, Abuja'];
-const statuses = ['Active', 'Inactive', 'Active', 'Inactive', 'Active', 'Inactive', 'Active', 'Inactive', 'Active', 'Inactive'];
+const totalPassengers = [2, 4, 1, 3, 3, 23, 20, 24, 26, 17];
+const distancesTravelled = ['12', '22', '3', '15', '18', '110', '90', '115', '130', '85'];
+const expectedYields = ['20000', '23000', '4200', '19000', '21000', '23000', '17000', '24000', '25000', '16000'];
+const currentLocations = ['Maitama, Abuja', 'Asokoro, Abuja', 'Wuse, Abuja', 'Gwarinpa, Abuja', 'Wuye, Abuja', 'Wuse, Abuja', 'Garki, Abuja', 'Maitama, Abuja', 'Gwarimpa, Abuja', 'Wuse, Abuja'];
+const statuses = ['Inactive', 'Inactive', 'Active', 'Active', 'Active', 'Inactive', 'Active', 'Inactive', 'Active', 'Inactive'];
 const passengers = [3, 4, 2, 5, 1, 3, 6, 2, 4, 3];
 const driverNames = ['Awomakou Simeon', 'Chukwudi Obinna', 'Ademola Adewale', 'Ngozi Okeke', 'Amina Yusuf', 'Ifeanyi Nwachukwu', 'Kehinde Olayinka', 'Emeka Eze', 'Fatima Bello', 'Yusuf Abdullahi'];
 
